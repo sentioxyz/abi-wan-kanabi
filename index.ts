@@ -9,7 +9,7 @@ import {
   FunctionRet,
 } from './kanabi'
 
-export { type Abi } from './kanabi'
+export { type Abi, EventToPrimitiveType, StringToPrimitiveType, ExtractAbiEvent, ExtractAbiStruct, ExtractAbiStructs, ExtractAbiEnum, ExtractAbiEnums } from './kanabi'
 
 export function call<
   TAbi extends Abi,
