@@ -1,6 +1,6 @@
 {
   "name": "@sentio/abi-wan-kanabi",
-  "version": "2.2.2",
+  "version": "2.2.2-1",
   "description": "Abi parser for Cairo smart contracts, based on wagmi abitype",
   "main": "./dist/index.js",
   "bin": {
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/keep-starknet-strange/abi-wan-kanabi/issues"
   },
-  "homepage": "https://github.com/keep-starknet-strange/abi-wan-kanabi#readme",
+  "homepage": "https://github.com/sentioxyz/abi-wan-kanabi#readme",
   "publishConfig": {
     "ivpavici:registry": "https://npm.pkg.github.com"
   },

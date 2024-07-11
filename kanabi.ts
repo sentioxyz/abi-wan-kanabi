@@ -215,8 +215,13 @@ export type ExtractAbiFunctions<TAbi extends Abi> =
   | Extract<ExtractAbiInterfaces<TAbi>['items'][number], { type: 'function' }>
   | Extract<TAbi[number], { type: 'function' }>
 
+export type ExtractAbiViewFunctions<TAbi extends Abi> = Extract<ExtractAbiFunctions<TAbi>, { state_mutability: 'view' }>
+
 export type ExtractAbiFunctionNames<TAbi extends Abi> =
   ExtractAbiFunctions<TAbi>['name']
+
+export type ExtractAbiViewFunctionNames<TAbi extends Abi> =
+  ExtractAbiViewFunctions<TAbi>['name']
 
 export type ExtractAbiFunction<
   TAbi extends Abi,
@@ -469,6 +474,14 @@ export type FunctionCall<
 
 export type ContractFunctions<TAbi extends Abi> = {
   [K in ExtractAbiFunctionNames<TAbi>]: FunctionCall<
+    TAbi,
+    ExtractAbiFunction<TAbi, K>
+  >
+}
+
+
+export type ContractViewFunctions<TAbi extends Abi> = {
+  [K in ExtractAbiViewFunctionNames<TAbi>]: FunctionCall<
     TAbi,
     ExtractAbiFunction<TAbi, K>
   >
